@@ -1,5 +1,5 @@
 name: bitcoin-core
-version: 0.20.1
+version: 0.21.1
 summary:   peer-to-peer network based digital currency
 description: |
   Bitcoin is a free open source peer-to-peer electronic cash system that
@@ -24,7 +24,7 @@ apps:
       HOME: $SNAP_USER_COMMON
   qt:
     command: desktop-launch bitcoin-qt
-    plugs: [home, removable-media, network, network-bind, desktop, x11]
+    plugs: [home, removable-media, network, network-bind, desktop, x11, unity7]
     environment:
       HOME: $SNAP_USER_COMMON
       DISABLE_WAYLAND: 1
@@ -42,7 +42,7 @@ parts:
       wget https://bitcoincore.org/bin/bitcoin-core-${SNAPCRAFT_PROJECT_VERSION}/SHA256SUMS.asc
       wget https://bitcoincore.org/bin/bitcoin-core-${SNAPCRAFT_PROJECT_VERSION}/bitcoin-${SNAPCRAFT_PROJECT_VERSION}.tar.gz
       wget https://bitcoincore.org/bin/bitcoin-core-${SNAPCRAFT_PROJECT_VERSION}/bitcoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
-      echo "b5c04fe37b40119bdc2d329b9c8fb9c0b402a10388fd0837d1a30fb0cd99b344  SHA256SUMS.asc" | sha256sum --check
+      echo "1f7747871fe5374a172bac118d5ffd60839055b12e85468eb2120b84b2909f4a  SHA256SUMS.asc" | sha256sum --check
       sha256sum --ignore-missing --check SHA256SUMS.asc
       tar -xvf bitcoin-${SNAPCRAFT_PROJECT_VERSION}-${SNAPCRAFT_ARCH_TRIPLET}.tar.gz
       tar -xvf bitcoin-${SNAPCRAFT_PROJECT_VERSION}.tar.gz
